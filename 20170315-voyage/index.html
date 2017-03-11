@@ -108,15 +108,15 @@
 * window options   - ウィンドウごとの設定 (`setw`で設定)
 </script>
 
-<script type="text/x-markdown">
+<script layout type="text/x-markdown">
 ### sever/session options の設定方法
 ### `set [-sg] オプション名 オプションの値`
-
 * setは、 set-option のエイリアス
 </script>
 
 <script layout type="text/x-markdown">
-## sever/session options の設定方法 
+## sever/session options 
+## の設定方法 
 ## (具体例)
 </script>
 
@@ -132,9 +132,7 @@ set -s escape-time 0
 
 <script layout="code" type="text/x-markdown">
 ## -g オプション
-### session optionsを定義する時は、
-### 基本的に記述する
-#### このオプションがない場合は、個別のセッション用の設定になる
+### session optionsを定義する時は、<br>基本的に記述する
 
 ```tmux.conf
 # ウィンドウとペインの番号を1から開始する（デフォルトは、0）
@@ -145,13 +143,13 @@ set -g base-index 1
 <script layout type="text/x-markdown">
 ### window options の設定方法 (よく使いそうなもの)
 ### `setw [-g] オプション名 オプションの値`
-
-* setwは、 set-option-window のエイリアス
+* setwは、set-option-window のエイリアス
 * setのwindow-option専用版
 </script>
 
 <script layout type="text/x-markdown">
-## window options の設定方法
+## window options 
+## の設定方法
 ## (具体例)
 </script>
 
@@ -190,8 +188,8 @@ setw -g mode-keys vi
 </script>
 
 <script layout type="text/x-markdown">
-## キーバインドの追加 (よく使いそうなもの)
-### `bind [-nr] [-t キーテーブル] 割り当てたいキー tmuxのコマンド [引数]`
+### キーバインドの追加 (よく使いそうなもの)
+### `bind [-nr] [-t キーテーブル] キー コマンド [引数]`
 * bind は、 bind-key のエイリアス
 * 割り当てたいキーには、prefixキーに続くキーのみを設定する
 </script>
@@ -201,7 +199,7 @@ setw -g mode-keys vi
 </script>
 
 <script layout="code" type="text/x-markdown">
-## 割り当てたいキーが複合キーの場合
+## キーが複合キーの場合
 ### Controlキーとの複合キーの場合`C-` 
 ### Shiftキーとの複合キーの場合`S-` 
 ### Optionキーとの複合キーの場合`M-` 
@@ -227,7 +225,7 @@ bind -n S-right select-pane -R
 
 <script layout="code" type="text/x-markdown">
 ## -r オプション
-### 2回目以降の操作で、prefixキーの入力が不要になる (連打用途)
+### 2回目以降の操作で、<br>prefixキーの入力が不要になる (連打用途)
 
 ```tmux.conf
 # Prefix + JKHLで、ペインのサイズに変更(連打可能)
@@ -240,7 +238,7 @@ bind -r L resize-pane -R 5
 
 <script layout="code" type="text/x-markdown">
 ## -t キーテーブル
-### 特定のキーテーブルの場合のキーバインドを設定する
+### 特定のキーテーブルのキーバインドを設定する
 
 ```tmux.conf
 # vi-copyのキーテーブルの場合、Escキーでコピーの反転を解除
@@ -249,8 +247,8 @@ bind -t vi-copy Escape clear-selection
 </script>
 
 <script layout type="text/x-markdown">
-## キーバインドの削除 (よく使いそうなもの)
-### `unbind-key [-n] [-t キーテーブル] 削除したいキー`
+### キーバインドの削除 (よく使いそうなもの)
+### `unbind-key [-n] [-t キーテーブル] キー`
 * unbind は、 unbind-key のエイリアス
 * bindのキーバインド削除版
 </script>
@@ -270,7 +268,7 @@ unbind C-b
 
 <script layout type="text/x-markdown">
 ## キーバインドを確認するには？
-* `<prefix> + ?` (manみたいな画面)
+* `<prefix> + ?`   (manみたいな画面)
 * `tmux list-keys` (標準出力)
 </script>
 
@@ -278,7 +276,6 @@ unbind C-b
 ## まとめ
 * オプションとキーバインドがわかれば、
 * tmux.confの設定が (だいたい) 読めるはず
-
 * 後は、いい感じの設定を取り込んでいきながら、
 * tmux.confを育てていきましょう！
 </script>
