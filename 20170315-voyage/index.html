@@ -15,7 +15,7 @@
 <script layout type="text/x-markdown">
 # @yinm
 ### Webアプリケーションエンジニア
-## ペパカレ1期生
+### ペパカレ1期生
 </script>
 
 <script layout type="text/x-markdown">
@@ -62,9 +62,9 @@
 
 <script layout type="text/x-markdown">
 # ~ 目次 ~
-## tmuxとは？
-## tmux.confの設定方法
-## まとめ
+### tmuxとは？
+### tmux.confの設定方法
+### まとめ
 </script>
 
 <script layout type="text/x-markdown">
@@ -87,15 +87,13 @@
 * `$HOME/.tmux.conf` に記述する
 * コメントは、`#`
 * 設定は、セッションを新しくしないと反映されない
-* (セッションのリロード設定をキーバインドしておくと便利)
+* (セッションのリロードを、キーバインドしておくと便利)
 </script>
 
 <script layout type="text/x-markdown">
 ## tmux.confで設定できるもの
-### オプション
-#### 見た目や振る舞いを変更する
+### オプション 
 ### キーバインド
-#### キー操作を変更する
 </script>
 
 <script layout type="text/x-markdown">
@@ -104,17 +102,22 @@
 
 <script layout type="text/x-markdown">
 ### オプションの分類が、3種類ある
-### 設定したいオプションが、どの分類かによって、記述方法が異なるので注意
+### 分類によって、記述方法が異なるので注意
 * sever options    - サーバーの設定       (`set -s`で設定)
 * session options  - セッションごとの設定 (`set`で設定)
 * window options   - ウィンドウごとの設定 (`setw`で設定)
 </script>
 
-<script layout="code" type="text/x-markdown">
+<script type="text/x-markdown">
 ### sever/session options の設定方法
-### (よく使いそうなもの)
 ### `set [-sg] オプション名 オプションの値`
+
 * setは、 set-option のエイリアス
+</script>
+
+<script layout type="text/x-markdown">
+## sever/session options の設定方法 
+## (具体例)
 </script>
 
 <script layout="code" type="text/x-markdown">
@@ -129,8 +132,9 @@ set -s escape-time 0
 
 <script layout="code" type="text/x-markdown">
 ## -g オプション
-### session optionsを定義する時は、基本的に記述する
-### このオプションがない場合は、個別のセッション用の設定になる
+### session optionsを定義する時は、
+### 基本的に記述する
+#### このオプションがない場合は、個別のセッション用の設定になる
 
 ```tmux.conf
 # ウィンドウとペインの番号を1から開始する（デフォルトは、0）
@@ -139,20 +143,23 @@ set -g base-index 1
 </script>
 
 <script layout type="text/x-markdown">
-## window options の設定方法 (よく使いそうなもの)
-* `setw [-g] オプション名 オプションの値`
-  * setwは、 set-option-window のエイリアス
-  * setのwindow-option専用版
+### window options の設定方法 (よく使いそうなもの)
+### `setw [-g] オプション名 オプションの値`
+
+* setwは、 set-option-window のエイリアス
+* setのwindow-option専用版
 </script>
 
 <script layout type="text/x-markdown">
-## window options の設定方法 (具体例)
+## window options の設定方法
+## (具体例)
 </script>
 
 <script layout="code" type="text/x-markdown">
 ## -g オプション
-### window optionsを定義する時は、基本的に記述する
-### このオプションがない場合は、個別のウィンドウ用の設定になる
+### window optionsを定義する時は、
+### 基本的に記述する
+#### このオプションがない場合は、個別のウィンドウ用の設定になる
 
 ```tmux.conf
 # Vi キーバインド
@@ -171,8 +178,9 @@ setw -g mode-keys vi
 </script>
 
 <script layout type="text/x-markdown">
-## キーバインド の設定にあたって知っておきたいもの
-### キーテーブル (特定のモード時のキーバインドを変更できる) 
+## 事前知識
+### キーテーブル
+### (特定のモード時のキーバインドを変更できる) 
 * vi-edit
 * vi-choice
 * vi-copy
@@ -222,7 +230,7 @@ bind -n S-right select-pane -R
 ### 2回目以降の操作で、prefixキーの入力が不要になる (連打用途)
 
 ```tmux.conf
-# ペインサイズを上下左右（Prefix+JKHL）に変更(連打してリサイズ可能)
+# Prefix + JKHLで、ペインのサイズに変更(連打可能)
 bind -r H resize-pane -L 5
 bind -r J resize-pane -D 5
 bind -r K resize-pane -U 5
@@ -260,7 +268,7 @@ unbind C-b
 ```
 </script>
 
-<script layout="code" type="text/x-markdown">
+<script layout type="text/x-markdown">
 ## キーバインドを確認するには？
 * `<prefix> + ?` (manみたいな画面)
 * `tmux list-keys` (標準出力)
@@ -270,6 +278,7 @@ unbind C-b
 ## まとめ
 * オプションとキーバインドがわかれば、
 * tmux.confの設定が (だいたい) 読めるはず
+
 * 後は、いい感じの設定を取り込んでいきながら、
 * tmux.confを育てていきましょう！
 </script>
