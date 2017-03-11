@@ -6,7 +6,8 @@
 </head>
 <body>
 
-<script layout="cover" invert type="text/x-markdown">
+<script layout="cover" invert type="text/x-markdown"
+  backface="image/20111104024654_blue_matrix_Gallery.jpg" backface-filter="brightness(.4)">
 ## tmux.confと仲良くなりたい
 
 2017.03.15 [yinm](https://github.com/yinm)
@@ -106,7 +107,7 @@
 ### オプションの分類が、3種類ある
 ### 分類によって、記述方法が異なるので注意
 
-* sever options - サーバーの設定 (set -s`で設定)
+* sever options - サーバーの設定 (`set -s`で設定)
 * session options - セッションごとの設定 (`set`で設定)
 * window options - ウィンドウごとの設定 (`setw`で設定)
 </script>
@@ -188,7 +189,7 @@ setw -g mode-keys vi
 <script layout type="text/x-markdown">
 ### キーバインドの追加
 ### `bind [-nr] [-t キーテーブル] キー コマンド`
-* bind は、 bind-key のエイリアス
+* bind は、`bind-key` のエイリアス
 * 割り当てたいキーには、prefixキーに続くキーのみを設定する
 </script>
 
@@ -247,7 +248,7 @@ bind -t vi-copy Escape clear-selection
 <script layout type="text/x-markdown">
 ### キーバインドの削除
 ### `unbind-key [-n] [-t キーテーブル] キー`
-* unbind は、unbind-key のエイリアス
+* unbind は、`unbind-key` のエイリアス
 * bindのキーバインド削除版
 </script>
 
