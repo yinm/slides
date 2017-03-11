@@ -57,7 +57,7 @@
 
 <script layout type="text/x-markdown">
 ## tmux.confの設定を
-## 読めるようになる！！！
+## 読めるようになろう！！！
 </script>
 
 <script layout type="text/x-markdown">
@@ -74,7 +74,7 @@
 
 <script layout type="text/x-markdown">
 ### ターミナルマルチプレクサ
-### クライアント/サーバー モデルで動作する
+### クライアント/サーバーモデルで動作する
 ### 類似のツールとして、GNU screenなど
 </script>
 
@@ -85,7 +85,7 @@
 <script layout type="text/x-markdown">
 ## 事前知識
 * `$HOME/.tmux.conf` に記述する
-* コメントは、`#`
+* コメントは、`#`から始める
 * 設定は、セッションを新しくしないと反映されない
 * (セッションのリロードを、キーバインドしておくと便利)
 </script>
@@ -103,9 +103,12 @@
 <script layout type="text/x-markdown">
 ### オプションの分類が、3種類ある
 ### 分類によって、記述方法が異なるので注意
-* sever options    - サーバーの設定       (`set -s`で設定)
-* session options  - セッションごとの設定 (`set`で設定)
-* window options   - ウィンドウごとの設定 (`setw`で設定)
+
+オプション名 |説明 |設定方法
+|:---|:---|:---
+sever options |サーバーの設定 |`set -s`
+session options |セッションごとの設定 |`set`で設定
+window options |ウィンドウごとの設定 |`setw`で設定
 </script>
 
 <script layout type="text/x-markdown">
@@ -142,7 +145,7 @@ set -g base-index 1
 <script layout type="text/x-markdown">
 ### window options の設定方法
 ### `setw [-g] オプション名 オプションの値`
-* setwは、set-option-window のエイリアス
+* setwは、`set-option-window` のエイリアス
 * setのwindow-option専用版
 </script>
 
@@ -153,8 +156,7 @@ set -g base-index 1
 
 <script layout="code" type="text/x-markdown">
 ## -g オプション
-### window optionsを定義する時は、<br>基本的に記述する
-#### このオプションがない場合は、個別のウィンドウ用の設定になる
+### window optionsを定義する時は、  基本的に記述する
 
 ```tmux.conf
 # Vi キーバインド
@@ -164,8 +166,8 @@ setw -g mode-keys vi
 
 <script layout type="text/x-markdown">
 ## オプションを確認するには？
-* sever options -> `tmux show -s`
-* session options, window options -> `tmux show -g`
+* sever options → `tmux show -s`
+* session options, window options → `tmux show -g`
 </script>
 
 <script layout type="text/x-markdown">
@@ -174,8 +176,7 @@ setw -g mode-keys vi
 
 <script layout type="text/x-markdown">
 ## 事前知識
-### キーテーブル
-### (特定のモード時のキーバインドを変更できる) 
+### キーテーブル  (特定のモード時のキーバインドを変更できる) 
 * vi-edit
 * vi-choice
 * vi-copy
@@ -186,20 +187,20 @@ setw -g mode-keys vi
 
 <script layout type="text/x-markdown">
 ### キーバインドの追加 (よく使いそうなもの)
-### `bind [-nr] [-t キーテーブル] キー コマンド [引数]`
+### `bind [-nr] [-t キーテーブル] キー コマンド`
 * bind は、 bind-key のエイリアス
 * 割り当てたいキーには、prefixキーに続くキーのみを設定する
 </script>
 
 <script layout type="text/x-markdown">
-## キーバインドの追加 (具体例)
+## キーバインドの追加例
 </script>
 
 <script layout="code" type="text/x-markdown">
 ## キーが複合キーの場合
 ### Controlキーとの複合キーの場合`C-` 
-### Shiftキーとの複合キーの場合`S-` 
-### Optionキーとの複合キーの場合`M-` 
+### Shiftキーとの複合キーの場合　`S-` 
+### Optionキーとの複合キーの場合 `M-` 
 
 ```tmux.conf
 # C-t*2で、tmux内のプログラムにC-tを送る
@@ -251,11 +252,11 @@ bind -t vi-copy Escape clear-selection
 </script>
 
 <script layout type="text/x-markdown">
-## キーバインドの追加 (具体例)
+## キーバインドの削除例
 </script>
 
 <script layout="code" type="text/x-markdown">
-## 基本的な使い方
+### 基本的な使い方
 
 ```tmux.conf
 # C-bのキーバインドを解除する
@@ -265,14 +266,14 @@ unbind C-b
 
 <script layout type="text/x-markdown">
 ## キーバインドを確認するには？
-* `<prefix> + ?`   (manみたいな画面)
-* `tmux list-keys` (標準出力)
+* 標準出力する場合 → `tmux list-keys`
+* manみたいな画面で表示する場合 → `<prefix> + ?`
 </script>
 
 <script layout type="text/x-markdown">
 ## まとめ
 * オプションとキーバインドがわかれば、
-* tmux.confの設定が (だいたい) 読めるはず
+* tmux.confの設定が (だいたい) 読めるはず。
 * 後は、いい感じの設定を取り込んでいきながら、
 * tmux.confを育てていきましょう！
 </script>
