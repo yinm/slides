@@ -12,6 +12,11 @@
 2017.03.15 [@yinm](https://github.com/yinm)
 </script>
 
+<script layout type="text/x-markdown">
+# @yinm
+## Webアプリケーションエンジニア
+## ペパカレ1期生
+</script>
 
 <script layout type="text/x-markdown">
 ## 突然ですが
@@ -62,6 +67,56 @@
 * まとめ
 </script>
 
+<script layout type="text/x-markdown">
+# tmuxとは？
+</script>
+
+
+<script layout type="text/x-markdown">
+複数のターミナルを1つのターミナルで操作できる、ターミナルマルチプレクサ
+クライアント/サーバー モデルで動作する
+類似のツールとして、GNU screenなど
+</script>
+
+<script layout type="text/x-markdown">
+# tmux.confの設定方法
+</script>
+
+<script layout type="text/x-markdown">
+## 事前知識
+* `$HOME/.tmux.conf` に記述する
+* コメントは、`#`
+* tmux.confに書いたものは、セッションを新しくしないと反映されない
+  * (セッションのリロード設定をキーバインドしておくと便利)
+</script>
+
+<script layout type="text/x-markdown">
+## tmux.confで設定できるもの
+* オプション
+  * 見た目や振る舞いを変更する
+* キーバインド
+  * キー操作を変更する
+</script>
+
+<script layout type="text/x-markdown">
+# オプション
+</script>
+
+<script layout type="text/x-markdown">
+## 事前知識
+* オプションの分類が、3種類ある
+* 設定したいオプションが、どの分類かによって、記述方法が異なるので注意
+  * sever options    - サーバーの設定       (`set -s`で設定)
+  * session options  - セッションごとの設定 (`set`で設定)
+  * window options   - ウィンドウごとの設定 (`setw`で設定)
+</script>
+
+<script layout="code" type="text/x-markdown">
+## sever/session options の設定方法 (よく使いそうなもの)
+### setは、 set-option のエイリアス
+`set [-sg] オプション名 オプションの値`
+</script>
+
 <script layout="code" type="text/x-markdown">
 ## -s オプション
 ### sever optionsの設定する
@@ -72,12 +127,88 @@ set -s escape-time 0
 ```
 </script>
 
+<script layout="code" type="text/x-markdown">
+## -g オプション
+### session optionsを定義する時は、基本的に記述する
+### このオプションがない場合は、個別のセッション用の設定になる
+
+```
+# ウィンドウとペインの番号を1から開始する（デフォルトは、0）
+set -g base-index 1
+```
+</script>
+
+<script layout type="text/x-markdown">
+## window options の設定方法 (よく使いそうなもの)
+* `setw [-g] オプション名 オプションの値`
+  * setwは、 set-option-window のエイリアス
+  * setのwindow-option専用版
+</script>
+
+<script layout type="text/x-markdown">
+## window options の設定方法 (具体例)
+</script>
+
+<script layout="code" type="text/x-markdown">
+## -g オプション
+### window optionsを定義する時は、基本的に記述する
+### このオプションがない場合は、個別のウィンドウ用の設定になる
+
+```
+# Vi キーバインド
+setw -g mode-keys vi
+```
+</script>
+
+<script layout type="text/x-markdown">
+## オプションを確認するには？
+* sever options -> `tmux show -s`
+* session options, window options -> `tmux show -g`
+</script>
+
+<script layout type="text/x-markdown">
+# キーバインド
+</script>
+
+<script layout type="text/x-markdown">
+## キーバインド の設定にあたって知っておきたいもの
+### キーテーブル (特定のモード時のキーバインドを変更できる) 
+* vi-edit
+* vi-choice
+* vi-copy
+* emacs-edit
+* emacs-choice
+* emacs-copy
+</script>
+
+<script layout type="text/x-markdown">
+## キーバインドの追加 (よく使いそうなもの)
+### `bind [-nr] [-t キーテーブル] 割り当てたいキー tmuxのコマンド [引数]`
+* bind は、 bind-key のエイリアス
+* 割り当てたいキーには、prefixキーに続くキーのみを設定する
+</script>
+
+<script layout type="text/x-markdown">
+## キーバインドの追加 (具体例)
+</script>
+
+<script layout="code" type="text/x-markdown">
+## 割り当てたいキーが複合キーの場合
+### Controlキーとの複合キーの場合`C-` 
+### Shiftキーとの複合キーの場合`S-` 
+### Optionキーとの複合キーの場合`M-` 
+
+```
+# C-t*2で、tmux内のプログラムにC-tを送る
+bind C-t send-prefix
+```
+</script>
 
 <script layout="code" type="text/x-markdown">
 ## -n オプション
 ### prefixキーなしで、キーバインドできる
 
-```tmux.conf
+```
 # Shift + 上下左右でペインを移動できるようにする
 bind -n S-left select-pane -L
 bind -n S-down select-pane -D
@@ -86,10 +217,73 @@ bind -n S-right select-pane -R
 ```
 </script>
 
+<script layout="code" type="text/x-markdown">
+## -r オプション
+### 2回目以降の操作で、prefixキーの入力が不要になる (連打用途)
 
+```
+# ペインサイズを上下左右（Prefix+JKHL）に変更(連打してリサイズ可能)
+bind -r H resize-pane -L 5
+bind -r J resize-pane -D 5
+bind -r K resize-pane -U 5
+bind -r L resize-pane -R 5
+```
+</script>
 
+<script layout="code" type="text/x-markdown">
+## -t キーテーブル
+### 特定のキーテーブルの場合のキーバインドを設定する
 
+```
+# vi-copyのキーテーブルの場合、Escキーでコピーの反転を解除
+bind -t vi-copy Escape clear-selection
+```
+</script>
 
+<script layout type="text/x-markdown">
+## キーバインドの削除 (よく使いそうなもの)
+### unbind-key [-n] [-t キーテーブル] 削除したいキー
+* unbind は、 unbind-key のエイリアス
+* bindのキーバインド削除版
+</script>
+
+<script layout type="text/x-markdown">
+## キーバインドの追加 (具体例)
+</script>
+
+<script layout="code" type="text/x-markdown">
+## 基本的な使い方
+
+```
+# C-bのキーバインドを解除する
+unbind C-b
+```
+</script>
+
+<script layout="code" type="text/x-markdown">
+## キーバインドを確認するには？
+
+`<prefix> + ?` (manみたいな画面)
+`tmux list-keys` (標準出力)
+</script>
+
+<script layout type="text/x-markdown">
+## まとめ
+* オプションとキーバインドがわかれば、tmux.confの設定が (だいたい) 読めるはず
+* 後は、いい感じの設定を取り込んでいきながら、tmux.confを育てていきましょう！
+</script>
+
+<script layout type="text/x-markdown">
+# おまけ
+</script>
+
+<script layout type="text/x-markdown">
+## 参考になりそうな設定
+* 達人に学ぶ.tmux.confの基本設定 http://qiita.com/succi0303/items/cb396704493476373edf
+* ターミナルマルチプレクサ tmux をカスタマイズする http://qiita.com/b4b4r07/items/01359e8a3066d1c37edc
+* tmuxのおすすめ設定 http://qiita.com/catatsuy/items/db0a471bf1eabaa21c36
+* 僕のtmuxの設定 https://github.com/yinm/dotfiles/blob/master/.tmux.conf
+</script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
 <script src="./dist/talkie.min.js"></script>
