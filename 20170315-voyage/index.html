@@ -8,17 +8,17 @@
 
 <script layout="cover" invert type="text/x-markdown"
   backface="image/20111104024654_blue_matrix_Gallery.jpg" backface-filter="brightness(.4)">
-## tmux.confと仲良くなりたい
+## tmux.confと仲良くなろう
 
-2017.03.15 [yinm](https://github.com/yinm)
+2017.03.15 
 </script>
 
-<script layout type="text/x-markdown">
+<script layout invert type="text/x-markdown">
 ## 自己紹介
 
 <img src="./image/logo.png" alt="yinm" width="200" height="200">
 
-* yinm
+[yinm](https://github.com/yinm)
 * Web Application Engineer
 </script>
 
@@ -35,37 +35,30 @@
 
 <script layout invert type="text/x-markdown"
   backface="image/man1.jpg" backface-filter="blur(2px) brightness(.7)">
-# 快適！！！！！
+# 最高じゃん！！！！！
 </script>
 
-<script layout invert type="text/x-markdown"
-  backface="image/man2.jpg" backface-filter="blur(2px) brightness(.6)">
+<script layout invert type="text/x-markdown">
 # ところで、
 # これ何書いてるの？
 </script>
 
-<script layout type="text/x-markdown">
-# 調べてみる...
+<script layout invert type="text/x-markdown"
+  backface="image/man2.jpg" backface-filter="blur(2px) brightness(.6)">
 </script>
 
 <script layout type="text/x-markdown">
-## 思ってたより、
-# 記法についての
-# ドキュメントがない！
+# そこで
 </script>
 
 <script layout type="text/x-markdown">
-# そこで、
-# この発表のゴール
+## このスライドで
+## tmux.confの設定の
+## 読み方を知ろう！！！
 </script>
 
 <script layout type="text/x-markdown">
-## tmux.confの設定を
-## 読めるようになろう！！！
-</script>
-
-<script layout type="text/x-markdown">
-# ~ 目次 ~
+## ~ おしながき ~
 ### tmuxとは？
 ### tmux.confの設定方法
 ### まとめ
@@ -78,7 +71,6 @@
 <script layout type="text/x-markdown">
 ### ターミナルマルチプレクサ
 ### クライアント/サーバーモデルで動作する
-### 類似のツールとして、GNU screenなど
 </script>
 
 <script layout type="text/x-markdown">
@@ -87,6 +79,9 @@
 
 <script layout type="text/x-markdown">
 ## 事前知識
+</script>
+
+<script layout type="text/x-markdown">
 * `$HOME/.tmux.conf` に記述する
 * コメントは、`#`から始める
 * 設定は、セッションを新しくしないと反映されない
@@ -94,7 +89,7 @@
 </script>
 
 <script layout type="text/x-markdown">
-## tmux.confで設定できるもの
+## tmux.confで記述するもの
 ### オプション 
 ### キーバインド
 </script>
@@ -105,7 +100,7 @@
 
 <script layout type="text/x-markdown">
 ### オプションの分類が、3種類ある
-### 分類によって、記述方法が異なるので注意
+### 分類によって、記述コマンドが異なるので注意
 
 * sever options - サーバーの設定 (`set -s`で設定)
 * session options - セッションごとの設定 (`set`で設定)
@@ -113,14 +108,22 @@
 </script>
 
 <script layout type="text/x-markdown">
-### sever/session options の設定方法
-### `set [-sg] オプション名 オプションの値`
-* setは、 `set-option` のエイリアス
+### オプションの分類が、3種類ある
+### 分類によって、記述コマンドが異なるので注意
+
+* sever options - サーバーの設定 (<span style="color:#f00;">`set -s`</span>で設定)
+* session options - セッションごとの設定 (<span style="color:#f00;">`set`</span>で設定)
+* window options - ウィンドウごとの設定 (<span style="color:#00f;">`setw`</span>で設定)
 </script>
 
 <script layout type="text/x-markdown">
 ## sever/session options 
-## の設定例
+## の設定方法
+</script>
+
+<script layout type="text/x-markdown">
+### `set [-sg] オプション名 オプションの値`
+* setは、 `set-option` のエイリアス
 </script>
 
 <script layout="code" type="text/x-markdown">
@@ -144,15 +147,14 @@ set -g base-index 1
 </script>
 
 <script layout type="text/x-markdown">
-### window options の設定方法
-### `setw [-g] オプション名 オプションの値`
-* setwは、`set-option-window` のエイリアス
-* setのwindow-option専用版
+## window options 
+## の設定方法
 </script>
 
 <script layout type="text/x-markdown">
-## window options 
-## の設定例
+### `setw [-g] オプション名 オプションの値`
+* setwは、`set-option-window` のエイリアス
+* setのwindow-option専用版
 </script>
 
 <script layout="code" type="text/x-markdown">
@@ -167,6 +169,9 @@ setw -g mode-keys vi
 
 <script layout type="text/x-markdown">
 ## オプションを確認するには？
+</script>
+
+<script layout type="text/x-markdown">
 * sever options → `tmux show -s`
 * session options, window options → `tmux show -g`
 </script>
@@ -177,36 +182,28 @@ setw -g mode-keys vi
 
 <script layout type="text/x-markdown">
 ## 事前知識
-### キーテーブル<br>(特定のモード時のキーバインドを変更できる) 
-* vi-edit
-* vi-choice
-* vi-copy
-* emacs-edit
-* emacs-choice
-* emacs-copy
 </script>
 
 <script layout type="text/x-markdown">
-### キーバインドの追加
+## tmuxのモード
+* edit
+* choice
+* copy
+</script>
+
+<script layout type="text/x-markdown">
+## キーテーブル
+### tmuxのモード毎に、viとemacs風の<br>キーバインドを定義しているもの
+</script>
+
+<script layout type="text/x-markdown">
+## キーバインドの追加
+</script>
+
+<script layout type="text/x-markdown">
 ### `bind [-nr] [-t キーテーブル] キー コマンド`
 * bind は、`bind-key` のエイリアス
-* 割り当てたいキーには、prefixキーに続くキーのみを設定する
-</script>
-
-<script layout type="text/x-markdown">
-## キーバインドの追加例
-</script>
-
-<script layout="code" type="text/x-markdown">
-## キーが複合キーの場合
-### Controlキーとの複合キーの場合`C-` 
-### Shiftキーとの複合キーの場合　`S-` 
-### Optionキーとの複合キーの場合 `M-` 
-
-```tmux.conf
-# C-t*2で、tmux内のプログラムにC-tを送る
-bind C-t send-prefix
-```
+* キーには、prefixキーに続くキーのみを設定する
 </script>
 
 <script layout="code" type="text/x-markdown">
@@ -245,15 +242,15 @@ bind -t vi-copy Escape clear-selection
 ```
 </script>
 
+
 <script layout type="text/x-markdown">
-### キーバインドの削除
-### `unbind-key [-n] [-t キーテーブル] キー`
-* unbind は、`unbind-key` のエイリアス
-* bindのキーバインド削除版
+## キーバインドの削除
 </script>
 
 <script layout type="text/x-markdown">
-## キーバインドの削除例
+### `unbind [-n] [-t キーテーブル] キー`
+* unbind は、`unbind-key` のエイリアス
+* bindのキーバインド削除版
 </script>
 
 <script layout="code" type="text/x-markdown">
@@ -267,13 +264,19 @@ unbind C-b
 
 <script layout type="text/x-markdown">
 ## キーバインドを確認するには？
+</script>
+
+<script layout type="text/x-markdown">
 * 標準出力する場合 → `tmux list-keys`
 * manみたいな画面で表示する場合 → `<prefix> + ?`
 </script>
 
 <script layout type="text/x-markdown">
 ## まとめ
-* オプションとキーバインドがわかれば、
+</script>
+
+<script layout type="text/x-markdown">
+* オプションとキーバインドを理解すれば、
 * tmux.confの設定が (だいたい) 読めるはず。
 * 後は、いい感じの設定を取り込んでいきながら、
 * tmux.confを育てていきましょう！
