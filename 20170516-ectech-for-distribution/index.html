@@ -1,0 +1,204 @@
+<html>
+<head>
+  <link rel="stylesheet" href="./dist/talkie.min.css">
+  <link rel="stylesheet" href="./dist/talkie-default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/monokai_sublime.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script layout="cover" invert type="text/x-markdown"
+  backface="image/PHP-logo.svg.png" backface-filter="brightness(.2)">
+## PHP(ほぼ)未経験者が、<br>やって良かった4つのこと
+
+### 飯沼 佑典 ([yinm](https://github.com/yinm))
+### 2017.05.16 第2回 EC事業部TechMTG
+</script>
+
+<script layout type="text/x-markdown">
+## おしながき
+* 配属時のスキルセット
+* やって良かったこと4つのこと
+* 最後にひとこと
+</script>
+
+<script layout type="text/x-markdown">
+## 発表のゴール
+* プログラミング歴やPHP経験の浅い人が、<br>Webサービス開発に関わることになった場合の<br>勉強指針を提供する
+</script>
+
+<script layout="cover" invert type="text/x-markdown"
+  backface="image/mac.jpg" backface-filter="brightness(.4)">
+## 配属時のスキルセット
+</script>
+
+<script layout type="text/x-markdown">
+## PHP以外
+* [dbMagic](https://ja.wikipedia.org/wiki/DbMagic) (前職で使ってた、非記述式言語。) <br>-> 3年
+* JavaScript, Ruby(on Rails) <br>-> 1年 (独学・スクール・ペパカレ)
+* その他 (Hello Worldだけ書けそうな幾つかの言語) <br>-> 挫折
+</script>
+
+<script layout type="text/x-markdown">
+## PHP
+それぞれ1周ずつしたくらい
+
+* [PHP入門 - ドットインストール](http://dotinstall.com/lessons/basic_php_v2)
+* [土日でわかるPHPプログラミング教室](https://froide.co.jp/books/programming)
+</script>
+
+<script layout type="text/x-markdown">
+### 業務で開発できる気がしない・・・&#128519;
+</script>
+
+<script layout="cover" invert type="text/x-markdown"
+  backface="image/pdca.jpg" backface-filter="brightness(.3)">
+## そこで、色々試しました
+今回はその中から、<br>「やって良かった」と思った4つをご紹介
+</script>
+
+<script layout type="text/x-markdown">
+## その1<br>PHP Docを書く
+</script>
+
+<script layout type="text/x-markdown">
+## 効能
+* インターフェースへの関心が高まる
+* PHPマニュアルの理解度が上がる
+</script>
+
+<script layout invert type="text/x-markdown">
+### 効能 - インターフェースへの関心が高まる
+* < LL言語でも、型の意識は重要 >
+* &#128552; 型を意識しよう！と思うだけでは、なかなか意識できない
+* &#128582; PHP Docを書くことで、強制的に型を意識できる
+</script>
+
+<script layout invert type="text/x-markdown">
+### 効能 - PHPマニュアルの理解度が上がる
+* < PHPマニュアルは、インターフェース情報も読む >
+* &#128552; 日本語の説明しか読んでなかったため、PHPマニュアルをあまり活用できていない
+* &#128582; 引数や返り値に、意図しない型を使っていないか意識するようになる
+* &#128582; 自分で関数・メソッドを書く際に、インターフェースの引き出しが増える
+</script>
+
+<script layout type="text/x-markdown">
+## 身につけ方
+* [最低限書いておきたいPHPのDocコメント - Qiita](http://qiita.com/motoyan-qwt/items/ee973666f1105435822c#%E5%BF%85%E3%81%9A%E6%9B%B8%E3%81%8F%E3%81%B9%E3%81%8D)の<br>「必ず書くべき」を参考に、ひたすら書いていく
+</script>
+
+<script layout type="text/x-markdown">
+## その2<br>エラーの種類と挙動を知る
+</script>
+
+<script layout type="text/x-markdown">
+## 効能
+* デバッグ効率UP (エラー原因のあたりがつけやすくなる)
+</script>
+
+<script layout invert type="text/x-markdown">
+### 効能 - デバッグ効率UP
+* < エラーの種類と発生タイミングを知る >
+* &#128552; エラーの種類などがわからない状態で調べても、見当違いなことを調べたりして、解決まで時間がかかる
+* &#128582; エラーの種類に合わせて、調査できるので解決が早い
+* 例) 「Parse Errorだから、コンパイル段階で失敗してる。そもそも実行できてないから、記述ミスがないか調べてみよう」
+</script>
+
+<script layout type="text/x-markdown">
+## 身につけ方
+* [パーフェクトPHP](https://gihyo.jp/dp/ebook/2014/978-4-7741-6756-5)の1 ~ 2章を読んで、<br>PHPのコンパイルの流れとエラーの種類を理解する
+</script>
+
+<script layout type="text/x-markdown">
+## その3<br>PhpStormに慣れる
+</script>
+
+<script layout type="text/x-markdown">
+## 効能
+* 開発効率UP<br>(定義ジャンプや、パラメータヒントなど)
+</script>
+
+<script layout invert type="text/x-markdown">
+### 効能 - 開発効率UP
+* < 便利な機能を使うことで、気持ちよくコードが書ける >
+* &#128552; 業務などで書く規模のコードだと、どこの関数が呼ばれているかを追うのが大変
+* &#128582; 定義ジャンプ機能などを使うことで、コードを追いやすい
+* &#128582; suggestion機能なども優秀なため、記述ミスなどにも気付きやすい
+</script>
+
+<script layout type="text/x-markdown">
+## 身につけ方
+* 以下の4つのショートカットを覚えれば、大体なんとかなる
+* あとは使いながら、必要に応じて機能を調べていく
+
+```
+Mac+JIS配列の場合
+
+Cmd + b (定義ジャンプ)
+Cmd + [ (定義ジャンプから元の位置に戻る)
+Cmd + Shift + f (プロジェクト内の文字列検索)
+Cmd + Shift + o (プロジェクト内のファイル検索)
+```
+
+</script>
+
+<script layout type="text/x-markdown">
+## その4<br>簡単なWebアプリケーションを作成する
+</script>
+
+<script layout type="text/x-markdown">
+## 効能
+* Webアプリケーション開発の全体像の理解
+</script>
+
+<script layout invert type="text/x-markdown">
+### 効能 - Webアプリケーション開発の全体像の理解
+* < コードの質を向上させるために、全体像を理解する >
+* &#128552; 自分の中にWebアプリケーション開発の経験がないと、無駄な記述が増えたり、読みにくいコードになりがち
+* &#128552; 業務だけで、全体像をつかめるようにするのは非効率 (大きなアプリケーションの一部分を触っていくことになることがほとんどだと思うため、全体像を知るまでには時間が掛かる)
+* &#128582; 自分で小さめのアプリケーションを書いてみることで、全体像を把握でき、自分の中でWeb開発のベストプラクティスが蓄積できる
+</script>
+
+<script layout type="text/x-markdown">
+## 身につけ方
+* 自分の理解できそうなレベルのものを、<br>本やネットで探して作ってみる
+* (私は[パーフェクトPHP](https://gihyo.jp/dp/ebook/2014/978-4-7741-6756-5)の6章で勉強しました)
+</script>
+
+<script layout type="text/x-markdown">
+## もっと身につけたい場合
+* [パーフェクトPHP](https://gihyo.jp/dp/ebook/2014/978-4-7741-6756-5)の7 ~ 8章を写経してみる。<br>7章: MVCフレームワークの作成<br>8章: そのフレームワークを使った、Webアプリケーション開発
+* ([サンプルコード](https://gihyo.jp/dp/ebook/2014/978-4-7741-6756-5)のフレームワークをダウンロードして、<br>先に8章をやってから、7章をやった方が理解しやすいかも)
+</script>
+
+<script layout="cover" invert type="text/x-markdown"
+  backface="image/midget_lamp.jpg" backface-filter="brightness(.4)">
+## 最後にひとこと
+</script>
+
+<script layout invert type="text/x-markdown">
+### 学習するときは、<br>自分の「**できそう**」を<br>着実に増やしていくことが大切
+</script>
+
+<script layout invert type="text/x-markdown">
+### 最後にひとこと - 補足
+* エンジニアが学ぶべきことは多いです (今後も、増える一方だと思います)
+* そのため、自分のやっていることに意味があるのか不安になる時もあると思います
+</script>
+
+<script layout invert type="text/x-markdown">
+* しかし、少しでも「できそう」なことを増やすこと
+* そして、それを繰り返していくこと
+* それが、どんな勉強法より大事なことだと思っています
+</script>
+
+<script layout invert type="text/x-markdown">
+* このスライドが誰かの役に立てば、うれしいです
+* 読んでくださって、ありがとうございました
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+<script src="./dist/talkie.min.js"></script>
+<script>Talkie();</script>
+</body>
+</html>
