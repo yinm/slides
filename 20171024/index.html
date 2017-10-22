@@ -58,13 +58,45 @@
 * profile / role
 </script>
 
-<script layout="code" invert type="text/x-markdown">
-### コードの説明
-*
+<script layout type="text/x-markdown">
+### Resource (概要編)
+</script>
 
+<script layout type="text/x-markdown">
+* システムの状態を宣言する最小の単位のこと
+* `file`や`service`など、Resourceの具体的な種類のことを、**Resource Types**と呼ぶ
+* Resource Typesによって、指定できる状態(attributes)が異なる
+* Resource Typesの詳細は、[https://puppet.com/docs/puppet/latest/type.html](https://puppet.com/docs/puppet/latest/type.html)
+</script>
+
+<script layout="code" invert type="text/x-markdown">
+### Resourceの記法
+
+```puppet
+resouce types { resource title
+  attribute1 => value1,
+  attribute2 => value2,
+  ...
+}
 ```
-$hoge;
+</script>
+
+<script layout type="text/x-markdown">
+### Resource (実践編)
+</script>
+
+
+<script layout="code" invert type="text/x-markdown">
+### Resourceの記法 (`file`の例)
+
+```puppet
+file { '/etc/passwd':
+  owner => 'root',
+  group => 'root',
+  mode  => '0644',
+}
 ```
+</script>
 
 <script layout type="text/x-markdown">
 *
