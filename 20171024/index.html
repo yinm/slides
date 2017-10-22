@@ -63,6 +63,28 @@
 * [fileを使った例](https://gist.github.com/yinm/93f907d5db936e31205514c47bf262fd)
 </script>
 
+<script layout type="text/x-markdown">
+### Level2
+### 依存関係を解決できるようになる
+</script>
+
+<script layout type="text/x-markdown">
+### 抱えている問題
+* Puppetのmanifestの適用順は、ファイルの先頭から順番に実行されるとは限らない
+* そのため、開発者が意図した順にmanifestが適用されないかもしれない
+* [依存関係が解決できていない例](https://gist.github.com/yinm/4c89560d9746dbda775fc737e0902a09)
+</script>
+
+<script layout type="text/x-markdown">
+### 解決するには
+* dependency relationship(`require`, `->`)を指定する
+* [依存関係が解決できる例](https://gist.github.com/yinm/4350b302cdd54a0f804c6327739d0cbe)
+</script>
+
+<script layout type="text/x-markdown">
+### 関連事項
+* 設定ファイルの変更を検知して、サービスを再起動したい場合には、refresh relationship(`subscribe`、`~>`)を指定する
+</script>
 
 <!-- TODO: 図を作る-->
 <script layout type="text/x-markdown">
