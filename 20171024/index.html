@@ -86,6 +86,28 @@
 * 設定ファイルの変更を検知して、サービスを再起動したい場合には、refresh relationship(`subscribe`、`~>`)を指定する
 </script>
 
+<script layout type="text/x-markdown">
+### Level3
+### Resouceをグルーピングする
+</script>
+
+<script layout type="text/x-markdown">
+### 抱えている問題
+* Resource Typeを使って様々なシステムの状態を作成できるようになったが、コードの見通しが悪く保守しづらい
+* [コードの見通しが悪い例](https://gist.github.com/yinm/f02e204c7dce545386dd84f38573e336)
+</script>
+
+<script layout type="text/x-markdown">
+### 解決するには
+* class化することでResourceをグルーピングでき、コードの見通しをよくできる
+* [class化した例](https://gist.github.com/yinm/53102a9d1f8713e23146c82914e18fde)
+</script>
+
+<script layout type="text/x-markdown">
+### 関連事項
+* classの呼び出しには、`include`, `contain`を使う
+</script>
+
 <!-- TODO: 図を作る-->
 <script layout type="text/x-markdown">
 ### Puppetの記法のOverview
