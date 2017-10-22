@@ -95,9 +95,31 @@ file { '/etc/passwd':
 </script>
 
 <script layout type="text/x-markdown">
-*
+### Class
 </script>
 
+<script layout type="text/x-markdown">
+* Resourceをグルーピングして、再利用しやすくするための記法
+</script>
+
+<script layout="code" invert type="text/x-markdown">
+### Classの記法
+
+```puppet
+class baz {
+  file { '/etc/passwd':
+    owner => 'root',
+    group => 'root',
+    mode  => '0644',
+  }
+
+  notify {'this is Class baz': }
+}
+
+# classの呼び出し
+include baz
+```
+</script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
 <script src="./dist/talkie.min.js"></script>
