@@ -121,6 +121,41 @@ include baz
 ```
 </script>
 
+<script layout type="text/x-markdown">
+### Module
+</script>
+
+<script layout type="text/x-markdown">
+* Classのファイルをひとまとめに管理するための仕組み
+* また、Classに関連するテンプレートなどをオートロードできる仕組みも備えている
+* Moduleは、**ディレクトリ構成**で表現する (記法があるわけではない)
+* 使用できるディレクトリ構成 [https://puppet.com/docs/puppet/latest/modules_fundamentals.html](https://puppet.com/docs/puppet/latest/modules_fundamentals.html)
+</script>
+
+<script layout="code" invert type="text/x-markdown">
+### Moduleのディレクトリ構成
+
+```
+modules
+├── ntp
+│   ├── files
+│   │   └── ntp.conf
+│   ├── manifests
+│   │   ├── config.pp
+│   │   ├── init.pp
+│   │   ├── install.pp
+│   │   └── service.pp
+│   ├── spec
+│   │   ├── classes
+│   │   │   └── init_spec.rb
+│   │   └── spec_helper.rb
+│   └── templates
+│       └── ntp.conf.epp
+```
+
+</script>
+
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
 <script src="./dist/talkie.min.js"></script>
 <script>Talkie();</script>
