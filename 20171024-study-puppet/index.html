@@ -15,12 +15,13 @@
 </script>
 
 <script layout type="text/x-markdown">
-## この発表のターゲットは誰？
+## 発表のターゲットは誰？
 * Puppetを読み書きできるようになりたいけれど、<br>どこから手をつけたらいいかわからない人
+* (= このテーマで発表しようと決めた時の自分)
 </script>
 
 <script layout type="text/x-markdown">
-## ゴールはどこ？
+## 発表のゴールはどこ？
 * Puppetのmanifestのなんとなくの読み方・書き方がわかる
 </script>
 
@@ -37,8 +38,8 @@
 </script>
 
 <script layout type="text/x-markdown">
-* ・ システム管理を自動で行うためのツール
-* ・ manifestと呼ばれるシステムのあるべき状態を記述するファイルを作成・適用することで実現する
+* システム管理を自動で行うためのツール
+* manifestと呼ばれるシステムのあるべき状態を記述する<br>ファイルを作成・適用することで実現する
 </script>
 
 <script layout="cover" invert type="text/x-markdown"
@@ -48,7 +49,7 @@
 
 <script layout type="text/x-markdown">
 ### はじめに
-* Puppetを読む上で必要そうな項目を、飛ばしながら書いてる
+* Puppetを読む上で必要そうな項目を、飛ばしながら話していく
 * Puppetが初めての人は、[kentaro/puppet-book](https://github.com/kentaro/puppet-book)を手を動かしながらやってみるとよさそう
 </script>
 
@@ -58,15 +59,15 @@
 </script>
 
 <script layout type="text/x-markdown">
-* システムの状態を最小の単位である、**Resource Type** を使う
-* Resource Typeによって、指定できるattributesが異なる
+* システムの状態を最小の単位である、**Resource Type**を使う
+* Resource Typeごとに、指定できる状態(attributes)が異なる
 * Resource Typeの詳細は、[https://puppet.com/docs/puppet/latest/type.html](https://puppet.com/docs/puppet/latest/type.html)
 </script>
 
 <script layout type="text/x-markdown">
 ### 主要なResource Type
 * `file`: ファイル、ディレクトリ、シンボリックリンクを作成する
-* `package`: パッケージをインストール・アンインストールをする
+* `package`: パッケージを(アン)インストールをする
 * `service`: サービスの起動や停止の設定を行う
 * `user`: ユーザーアカウントを管理する
 </script>
@@ -82,7 +83,7 @@
 
 <script layout type="text/x-markdown">
 ### 抱えている問題
-* Puppetのmanifestの適用順は、ファイルの先頭から順番に実行されるとは限らない
+* Puppetのmanifestの適用順は、ファイルの先頭から順番に適用されるとは限らない
 * そのため、開発者が意図した順にmanifestが適用されないかもしれない
 * [依存関係が解決できていない例](https://github.com/yinm/slides/blob/gh-pages/20171024-study-puppet/puppet/02_dependency/ng.pp)
 </script>
@@ -100,7 +101,7 @@
 
 <script layout type="text/x-markdown">
 ### Level3
-### Resouceをグルーピングする
+### Resourceをグルーピングする
 </script>
 
 <script layout type="text/x-markdown">
@@ -122,13 +123,13 @@
 
 <script layout type="text/x-markdown">
 ### Level4
-### classの関連ファイルをひとまとめにして管理する
+### classの関連ファイルをまとめて管理する
 </script>
 
 <script layout type="text/x-markdown">
 ### 何がいいか
 * 意味のある単位で、classや関連するテンプレートファイルなどをひとまとめにして、再利用性を高める
-* 実現するには、**ディレクトリ構成で表現する** (特定の記法があるわけではない)
+* 実現するには、**ディレクトリ構成で表現する** (記法があるわけではない)
 * 使用できるディレクトリ構成 [https://puppet.com/docs/puppet/latest/modules_fundamentals.html](https://puppet.com/docs/puppet/latest/modules_fundamentals.html)
 </script>
 
@@ -163,8 +164,8 @@
 
 <script layout type="text/x-markdown">
 * Puppetは、「システムのあるべき状態」を記述し、適用するためのツール
-* PuppetのResouce ~ Roleの関係性を抑えれば、読み書きしやすくなる
-* [kentaro/puppet-book](https://github.com/kentaro/puppet-book)で手を動かすのは有益
+* PuppetのResource ~ Roleの関係を抑えれば、読み書きしやすくなる
+* Puppetの学習をしたい場合は、[kentaro/puppet-book](https://github.com/kentaro/puppet-book)で手を動かすと良い
 </script>
 
 <script layout="cover" invert type="text/x-markdown"

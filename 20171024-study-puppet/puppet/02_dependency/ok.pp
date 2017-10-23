@@ -1,4 +1,4 @@
-# requireを指定することで、 yumrepo, packageの順で実行することを明示している
+# requireを指定することで、 yumrepo, packageの順で適用されることを明示している
 yumrepo { 'treasuredata':
   name     => 'treasuredata',
   descr    => 'treasuredata repo',

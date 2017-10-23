@@ -1,4 +1,4 @@
-# どちらが先に実行されるかわからない
+# どちらが先に適用されるかわからない
 yumrepo { 'treasuredata':
   name     => 'treasuredata',
   descr    => 'treasuredata repo',
