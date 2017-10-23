@@ -21,8 +21,7 @@
 
 <script layout type="text/x-markdown">
 ## ゴールはどこ？
-* Puppetのmanifestsのなんとなくの読み方がわかる
-* 実際に手を動かして学習できる方法がわかる
+* Puppetのmanifestのなんとなくの読み方・書き方がわかる
 </script>
 
 <script layout type="text/x-markdown">
@@ -38,9 +37,7 @@
 
 <script layout type="text/x-markdown">
 * ・ システム管理を自動で行うためのツール
-* ・ マルチプラットフォームで使うことができる
-* ・ [agent/master構成](https://puppet.com/docs/puppet/5.3/architecture.html#the-agentmaster-architecture)で動作する (stand aloneでも動作する)
-* 参考: [puppetlabs/puppet](https://github.com/puppetlabs/puppet)
+* ・ manifestと呼ばれるシステムのあるべき状態を記述するファイルを作成・適用することで実現する
 </script>
 
 <script layout type="text/x-markdown">
@@ -50,7 +47,7 @@
 <script layout type="text/x-markdown">
 ### はじめに
 * Puppetを読む上で必要そうな項目を飛ばしながら書いてる
-* Puppetが初めての人は、[kentaro/puppet-book](https://github.com/kentaro/puppet-book)を、手を動かしながらやってみるといいと思う
+* Puppetが初めての人は、[kentaro/puppet-book](https://github.com/kentaro/puppet-book)を手を動かしながらやってみるとよさそう
 </script>
 
 
@@ -63,6 +60,14 @@
 * システムの状態を最小の単位である、**Resource Type** を使う
 * Resource Typeによって、指定できるattributesが異なる
 * Resource Typeの詳細は、[https://puppet.com/docs/puppet/latest/type.html](https://puppet.com/docs/puppet/latest/type.html)
+</script>
+
+<script layout type="text/x-markdown">
+### 主要なResource Type
+* `file`: ファイル、ディレクトリ、シンボリックリンクを作成する
+* `package`: パッケージをインストール・アンインストールをする
+* `service`: サービスの起動や停止の設定を行う
+* `user`: ユーザーアカウントを管理する
 </script>
 
 <script layout type="text/x-markdown">
