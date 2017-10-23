@@ -1,0 +1,1 @@
+[20171024 - ゆるく始めるPUPPET](https://yinm.github.io/slides/20171024-study-puppet/)
