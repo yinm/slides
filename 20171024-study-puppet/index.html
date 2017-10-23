@@ -124,13 +124,22 @@
 ### classの関連ファイルをひとまとめにして管理する
 </script>
 
-<!-- TODO: リンク作る-->
 <script layout type="text/x-markdown">
 ### 何がいいか
 * 意味のある単位で、classや関連するテンプレートファイルなどをひとまとめにして、再利用性を高める
-* 実現するには、ディレクトリ構成で表現する (特定の記法があるわけではない)
+* 実現するには、**ディレクトリ構成で表現する** (特定の記法があるわけではない)
 * 使用できるディレクトリ構成 [https://puppet.com/docs/puppet/latest/modules_fundamentals.html](https://puppet.com/docs/puppet/latest/modules_fundamentals.html)
-* []()
+</script>
+
+<script layout type="text/x-markdown">
+### 主要なModuleのディレクトリ
+* `manifests`: classファイルを管理する。
+* `files`: 静的なファイルを管理する。
+* `templates`: 動的なファイルを管理する。
+</script>
+
+<script layout type="text/x-markdown">
+* [td-agentのModuleの例](https://github.com/yinm/slides/tree/gh-pages/20171024-study-puppet/puppet/04_module/td-agent)
 </script>
 
 <script layout type="text/x-markdown">
