@@ -1,6 +1,7 @@
 # スライド一覧
 
 ## 2019
+- [20190827 - Pluginを作って理解するBabelのTranspile](https://yinm.github.io/slides/20190827-learning-babel-with-plugin)
 - [20190725 - なぜから始める、現場のVue.jsアプリの自動テスト](https://yinm.github.io/slides/20190725-vuejs-application-testing-with-why/)
 
 ## 2017
