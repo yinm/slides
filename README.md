@@ -1,6 +1,7 @@
 # スライド一覧
 
 ## 2019
+- [20191207 - Lighthouse CI入門](https://yinm.github.io/slides/20191207-getting-started-lighthouse-ci)
 - [20191108 - 漸進的Stylelint導入のすすめ](https://yinm.github.io/slides/20191108-gradual-installation-of-stylelint)
 - [20191106 - Pluginで理解するwebpack](https://yinm.github.io/slides/20191106-learning-webpack-with-plguins)
 - [20190918 - コードを書いて理解する、React Hooks入門](https://yinm.github.io/slides/20190918-getting-started-with-react-hooks)
