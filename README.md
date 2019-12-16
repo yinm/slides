@@ -1,6 +1,7 @@
 # スライド一覧
 
 ## 2019
+- [20191217 - Vuetify2.xのレイアウト入門](https://yinm.github.io/slides/20191217-layouts-with-vuetify2.x)
 - [20191207 - Lighthouse CI入門](https://yinm.github.io/slides/20191207-getting-started-lighthouse-ci)
 - [20191108 - 漸進的Stylelint導入のすすめ](https://yinm.github.io/slides/20191108-gradual-installation-of-stylelint)
 - [20191106 - Pluginで理解するwebpack](https://yinm.github.io/slides/20191106-learning-webpack-with-plguins)
